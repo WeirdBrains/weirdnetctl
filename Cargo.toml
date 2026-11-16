@@ -1,0 +1,33 @@
+[package]
+name = "weirdnetctl"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+authors = ["m3talsmith <m3talsmith@gmail.com>"]
+license = "BSD-3-Clause"
+repository = "https://github.com/WeirdBrains/weirdnetctl"
+description = "Holds and rotates Weirdnet signing keys (passphrase-encrypted), signs prefix and scheme records, countersigns reserved prefixes, builds the WeirdBrains canonical list, and verifies all of them."
+readme = "README.md"
+keywords = ["weirdnet", "signing", "cli", "url-scheme", "p2p"]
+categories = ["command-line-utilities", "cryptography"]
+include = ["src/**", "README.md", "LICENSE", "CHANGELOG.md", "SECURITY.md"]
+
+[dependencies]
+weirdnet-schemes = { git = "https://github.com/WeirdBrains/weirdnet-schemes", rev = "bd0cb62d4b31e941cb04cb8a3cc7c5b5150ef38c" }
+libp2p-identity = { version = "0.3", features = ["ed25519", "rand"] }
+argon2 = "0.5"
+chacha20poly1305 = "0.10"
+getrandom = "0.3"
+zeroize = "1"
+rpassword = "7"
+clap = { version = "4", features = ["derive", "env"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+anyhow = "1"
+
+[profile.dev.package.argon2]
+opt-level = 3
+
+[profile.dev.package.blake2]
+opt-level = 3

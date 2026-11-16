@@ -1,0 +1,53 @@
+# weirdnetctl release config for the shared WeirdBrains release script
+# (scripts/weirdnet_release.py, vendored byte-identical from weirdnet-project-helpers; never edit it).
+#
+#   python3 scripts/weirdnet_release.py --dry-run "Short summary"   # then without --dry-run
+#
+helpers = "0.3.2"
+project = "weirdnetctl"
+timezone = "America/New_York"
+
+[[files]]
+kind = "cargo-package"
+path = "Cargo.toml"
+primary = true
+
+[[files]]
+kind = "cargo-lock"
+path = "Cargo.lock"
+
+[changelog]
+path = "CHANGELOG.md"
+links = "https://github.com/WeirdBrains/weirdnetctl"
+default_section = "Added"
+
+[checks]
+commands = [
+  "cargo fmt --check",
+  "cargo clippy --locked --all-targets --all-features -- -D warnings",
+  "cargo test --locked --all-features",
+  "cargo package --locked --allow-dirty",   # runs on the bumped, not yet committed tree
+]
+
+[crates]
+publish = ["."]
+
+[[platforms]]
+os = "linux"
+opt_out = "a maintainer CLI, published on crates.io (cargo install weirdnetctl)"
+
+[[platforms]]
+os = "macos"
+opt_out = "a maintainer CLI, published on crates.io (cargo install weirdnetctl)"
+
+[[platforms]]
+os = "windows"
+opt_out = "a maintainer CLI, published on crates.io (cargo install weirdnetctl)"
+
+[[platforms]]
+os = "android"
+opt_out = "a maintainer CLI, published on crates.io (cargo install weirdnetctl)"
+
+[[platforms]]
+os = "ios"
+opt_out = "a maintainer CLI, published on crates.io (cargo install weirdnetctl)"
