@@ -16,8 +16,7 @@ jobs:
       - run: cargo fmt --check
       - run: cargo clippy --locked --all-targets --all-features -- -D warnings
       - run: cargo test --locked
-      # `cargo package` waits for weirdnet-schemes on crates.io (it is a git dependency
-      # until then); the release checks run it.
+      - run: cargo package --locked
 
   desktop:
     strategy:

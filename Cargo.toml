@@ -13,7 +13,7 @@ categories = ["command-line-utilities", "cryptography"]
 include = ["src/**", "README.md", "LICENSE", "CHANGELOG.md", "SECURITY.md"]
 
 [dependencies]
-weirdnet-schemes = { git = "https://github.com/WeirdBrains/weirdnet-schemes", rev = "bd0cb62d4b31e941cb04cb8a3cc7c5b5150ef38c" }
+weirdnet-schemes = "=0.1.0"
 libp2p-identity = { version = "0.3", features = ["ed25519", "rand"] }
 argon2 = "0.5"
 chacha20poly1305 = "0.10"
