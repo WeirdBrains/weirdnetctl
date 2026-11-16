@@ -14,3 +14,5 @@ All notable changes to this project are documented here. The format follows
 - `countersign`: root signatures for reserved records, transfer signatures for prefixes.
 - `list`: build, sign and self-check the canonical list.
 - `verify`: check records, lists and rotations against anchor keys.
+
+[Unreleased]: https://github.com/WeirdBrains/weirdnetctl/compare/16eee278a6ad7b2547de45e1ca686ba67c00ee8b...HEAD
