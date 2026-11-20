@@ -1,7 +1,7 @@
 # weirdnetctl
 
 The maintainer's tool for Weirdnet signing keys and the records they sign. It holds and
-rotates the WeirdBrains root key, signs prefix and scheme records for
+rotates the [WeirdBrains](https://weirdbrains.com) root key, signs prefix and scheme records for
 [weirdnet-schemes](https://github.com/WeirdBrains/weirdnet-schemes), countersigns
 reserved `weirdnet…` records, builds the canonical list, and verifies all of them.
 
