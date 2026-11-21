@@ -875,9 +875,9 @@ dependencies = [
 
 [[package]]
 name = "weirdnet-schemes"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "69fb6dab59139dcd4afc00a6bd873c41ce32d35eddf7db8221ebb506c62eebd7"
+checksum = "b4178c6ca93f343e6ff6460da6de87bba9815521321e5bf1a564a81b00d3f28c"
 dependencies = [
  "base64",
  "hex",
